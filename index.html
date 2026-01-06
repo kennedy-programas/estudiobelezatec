@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio de Beleza | Luxury Boutique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Cache breaker adicionado via timestamp para evitar origin_mismatch por cache do SDK -->
+    <script src="https://accounts.google.com/gsi/client?t=${new Date().getTime()}" async defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              champagne: '#F5E6D3',
+              gold: '#D4AF37',
+              warmGrey: '#9B8B80',
+              roseRefined: '#C8A2A8',
+              pearlWhite: '#FAF9F6',
+              deepCharcoal: '#2C2C2C',
+            },
+            fontFamily: {
+              serif: ['Cormorant Garamond', 'serif'],
+              sans: ['Inter', 'sans-serif'],
+              accent: ['Italiana', 'cursive'],
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s ease;
+        scroll-behavior: smooth;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(12px) saturate(180%);
+        -webkit-backdrop-filter: blur(12px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+      .dark .glass {
+        background: rgba(30, 30, 30, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      /* Golden Glow Effect requested: box-shadow 0 0 10px #D4AF37 */
+      .golden-glow {
+        box-shadow: 0 0 10px #D4AF37;
+        border: 2px solid #D4AF37 !important;
+      }
+      .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-auto-rows: minmax(250px, auto);
+        gap: 2rem;
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-up {
+        animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      /* Shake animation for input errors */
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-5px); }
+        75% { transform: translateX(5px); }
+      }
+      .animate-shake {
+        animation: shake 0.3s cubic-bezier(.36,.07,.19,.97) both;
+      }
+
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: #C8A2A8; border-radius: 10px; }
+      
+      #googleButton iframe {
+        border-radius: 100px !important;
+        overflow: hidden;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-pearlWhite text-deepCharcoal dark:bg-deepCharcoal dark:text-pearlWhite font-sans">
+    <div id="root"></div>
+  </body>
+</html>
